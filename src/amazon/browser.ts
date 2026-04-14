@@ -43,10 +43,10 @@ export async function setupSession(): Promise<void> {
   await page.goto('https://www.amazon.com/ap/signin', { waitUntil: 'domcontentloaded' });
 
   // Wait until the user manually closes the browser
-  await new Promise<void>((resolve) => {
-    context.on('close', resolve);
-    page.on('close', resolve);
-  });
+  await Promise.race([
+    context.waitForEvent('close'),
+    page.waitForEvent('close'),
+  ]);
 
   await context.close().catch(() => {});
   console.log('\n[SETUP] Browser closed. Session saved to .browser-profile/');
