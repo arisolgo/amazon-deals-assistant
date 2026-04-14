@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.browser-profile/
+logs/
+config/settings.json
+.env
+*.env

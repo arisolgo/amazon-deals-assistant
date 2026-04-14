@@ -1,0 +1,23 @@
+{
+  "name": "amazon-deals-assistant",
+  "version": "1.0.0",
+  "description": "Personal assistant that monitors Amazon Today's Deals and sends referral links",
+  "main": "scripts/run.ts",
+  "scripts": {
+    "start": "ts-node scripts/run.ts",
+    "schedule": "ts-node scripts/run.ts --schedule",
+    "setup": "ts-node scripts/run.ts --setup"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^17.4.2",
+    "nodemailer": "^8.0.5",
+    "playwright": "^1.44.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/nodemailer": "^6.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
